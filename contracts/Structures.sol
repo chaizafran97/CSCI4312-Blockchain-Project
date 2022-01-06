@@ -17,7 +17,8 @@ struct sellerDetails{
 
 struct buyerDetails{
     address buyer;
-    
+    string buyerName;
+    string buyerCoordinates;
 }
 
 struct cargo{
@@ -27,6 +28,7 @@ struct cargo{
     address currentOwner;
     State cargoState;
     buyerDetails buyer;
+    string cargoCoordinates;
 }
 
 struct roles {
