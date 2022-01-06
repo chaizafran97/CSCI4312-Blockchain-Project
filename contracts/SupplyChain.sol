@@ -25,6 +25,7 @@ contract SupplyChain{
 		uint256 price;
 		string cargoDetails;
 		State cargoState;
+		string buyer;
 	}
 
 	Cargo[] public cargo;
@@ -45,8 +46,10 @@ contract SupplyChain{
 	}
 
 	//Order Created
-	function createOrder(uint256 _sku) public{
+	function createOrder(uint256 _sku, string memory _buyer) public{
 		cargo[_sku].cargoState = State.OrderCreated;
+		cargo.push(Cargo.buyer(_buyer));
+
 	}
 
 	//function that will be used when passed to courier
