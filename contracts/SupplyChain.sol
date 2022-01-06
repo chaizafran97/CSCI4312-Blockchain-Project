@@ -37,15 +37,19 @@ contract NewSupplyChain {
 	 	cargoID++;
     }
 
+	//function that allows us to put the buyer name
 	function cargoBought(uint256 _id, string memory _temp) public {
 		Cargo[_id].buyer = _temp;
 		Cargo[_id].cargoState = "Order Created";
 	}
 
+	//function that states the cargo is currently shipping
 	function cargoShipped(uint256 _id) public {
 		Cargo[_id].cargoState = "Order currently shipping";
 	}
 
+	//function that states buyer has received
+	//an if else statement needs to be added so this state can only be achieved when cargo location and buyer address matches
 	function cargoReceieved(uint256 _id) public {
 		Cargo[_id].cargoState = "Buyer has received";
 	}
