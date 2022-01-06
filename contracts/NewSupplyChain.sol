@@ -19,6 +19,7 @@ struct sellerDetails{
 struct buyerDetails{
     address buyer;
     string buyerName;
+    string buyerCoordinates;
 }
 
 struct cargo{
@@ -28,6 +29,7 @@ struct cargo{
     address currentOwner;
     State cargoState;
     buyerDetails buyer;
+    string cargoCoordinates;
 }
 
 struct roles {
@@ -45,28 +47,6 @@ contract NewSupplyChain {
     address owner;
 
     mapping(uint256 => Structures.cargo) public Cargo;
-    mapping(address => Structures.roles) Role;
-    
-    function hasSellerRole( address _account) public view returns (bool){
-        require(_account != address(0));
-        return Role[_account].seller;
-    }
-
-    function hasBuyerRole( address _account) public view returns (bool){
-        require(_account != address(1));
-        return Role[_account].buyer;
-    }
-
-    function hasCourierRole( address _account) public view returns (bool){
-        require(_account != address(2));
-        return Role[_account].courier;
-    }
-
-    function hasCustomsRole( address _account) public view returns (bool){
-        require(_account != address(3));
-        return Role[_account].customs;
-    }
-
 
     event cargoBuy(uint256 temp);
     event CargoMovedToCourier(uint256 temp);
@@ -98,14 +78,16 @@ contract NewSupplyChain {
     }
 
     function initializeCargo(
-        Structures.cargo memory cargo,
         string memory cargoID,
         uint256 cargoPrice,
-        string memory cargoDetails
-    ) internal {
-        cargo.cargoID = cargoID;
-        cargo.cargoPrice = cargoPrice;
-        cargo.cargoDetails = cargoDetails;
+        string memory cargoDetails,
+        string memory cargoCoordinates
+    ) public {
+      Structures.cargo memory Cargo;
+      Cargo.cargoID = cargoID;
+      Cargo.cargoPrice = cargoPrice;
+      Cargo.cargoDetails = cargoDetails;
+      Cargo.cargoCoordinates = cargoCoordinates;
     }
 
     function cargoBought(uint _temp) public {

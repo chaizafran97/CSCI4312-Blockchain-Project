@@ -66,4 +66,24 @@ contract SupplyChain{
 	function moveCargoToBuyer(uint256 _sku) public {
 		cargo[_sku].cargoState = State.Delivered;
 	}
+	    
+    function hasSellerRole( address _account) public view returns (bool){
+        require(_account != address(0));
+        return Role[_account].seller;
+    }
+
+    function hasBuyerRole( address _account) public view returns (bool){
+        require(_account != address(1));
+        return Role[_account].buyer;
+    }
+
+    function hasCourierRole( address _account) public view returns (bool){
+        require(_account != address(2));
+        return Role[_account].courier;
+    }
+
+    function hasCustomsRole( address _account) public view returns (bool){
+        require(_account != address(3));
+        return Role[_account].customs;
+    }
 }
