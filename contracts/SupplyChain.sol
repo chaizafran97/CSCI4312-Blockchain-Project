@@ -15,11 +15,10 @@ contract NewSupplyChain {
     address owner;
     cargo[] public Cargo;
 
-    event cargoBuy(uint256 temp);
-    event CargoMovedToCourier(uint256 temp);
-    event CargoMovedToCustoms(uint256 temp);
-    event CargoDeliveredToBuyer(uint256 temp);
+    event DeniedAtCustoms(string);
+	event AllowedThroughCustoms(string);
 
+	//for future use
     constructor() public {
         owner = msg.sender;
     }
@@ -43,8 +42,22 @@ contract NewSupplyChain {
 		Cargo[_id].cargoState = "Order Created";
 	}
 
+	//meant for customs check, if approved auto ship the cargo
+	//needs to have approval of several members before approve
+	function customsCheck(uint256 _id, string memory _temp) public returns(string memory){
+		if (keccak256(abi.encodePacked((_temp))) == keccak256("Y")){
+			emit AllowedThroughCustoms("Customs approved, you can proceed with shipping");//for future use
+			cargoShipping(_id);
+			return("Customs approved, you can proceed with shipping");
+		}
+		else {
+			emit DeniedAtCustoms("Order was denied by customs");//for future use
+			return("Order was denied by customs");//for testing purposes now
+		}
+	}
+
 	//function that states the cargo is currently shipping
-	function cargoShipped(uint256 _id) public {
+	function cargoShipping(uint256 _id) public {
 		Cargo[_id].cargoState = "Order currently shipping";
 	}
 
@@ -56,11 +69,9 @@ contract NewSupplyChain {
 
 	//meant for testing if we can see the cargo
 	function viewCargo(uint256 _temp) public view 
-	returns(uint256, uint256, string memory, string memory, string memory){
+	returns(uint256, uint256, string memory, string memory, string memory, string memory){
 	return(Cargo[_temp].cargoID, Cargo[_temp].cargoPrice, Cargo[_temp].cargoDetails,
-	Cargo[_temp].cargoCoordinates, Cargo[_temp].buyer);
+	Cargo[_temp].cargoCoordinates, Cargo[_temp].buyer, Cargo[_temp].cargoState);
 	}
-
-
 
     }
