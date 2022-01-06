@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.5.0;
 
-contract NewSupplyChain {
+contract SupplyChain {
 
    struct cargo{
     uint256 cargoID;
     uint256 cargoPrice;
     string cargoDetails;
-    string cargoCoordinates;
+    string cargoLocation;
 	string buyer;
 	string cargoState;
     }
@@ -27,12 +27,12 @@ contract NewSupplyChain {
     function initializeCargo(
         uint256 cargoPrice,
         string memory cargoDetails,
-        string memory cargoCoordinates,
+        string memory cargoLocation,
 		string memory buyer
     ) public {
 		uint cargoID = 0;
 		string memory cargoState = "With Seller";
-      	Cargo.push(cargo(cargoID,cargoPrice,cargoDetails,cargoCoordinates,buyer,cargoState));
+      	Cargo.push(cargo(cargoID,cargoPrice,cargoDetails,cargoLocation,buyer,cargoState));
 	 	cargoID++;
     }
 
@@ -71,7 +71,7 @@ contract NewSupplyChain {
 	function viewCargo(uint256 _temp) public view 
 	returns(uint256, uint256, string memory, string memory, string memory, string memory){
 	return(Cargo[_temp].cargoID, Cargo[_temp].cargoPrice, Cargo[_temp].cargoDetails,
-	Cargo[_temp].cargoCoordinates, Cargo[_temp].buyer, Cargo[_temp].cargoState);
+	Cargo[_temp].cargoLocation, Cargo[_temp].buyer, Cargo[_temp].cargoState);
 	}
 
     }
