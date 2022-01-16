@@ -1,19 +1,23 @@
-const _deploy_contracts = require("../migrations/2_deploy_contracts");
+const SupplyChain = artifacts.require("SupplyChain");
 
-var SupplyChain = artifacts.require('SupplyChain');
-
-_deploy_contracts('SupplyChain', function(accounts){
-
+contract("SupplyChain", initializeCargo =>{
+    
     cargoPrice = 600;
     cargoDetails = 'Graphics Card';
     cargoLocation = 'USA';
     buyer = '';
 
     it("Testing whether cargo has been initialized", async()=>{
+        assert.equal(cargoPrice, 600);
+        assert.equal(cargoDetails, 'Graphics Card');
+        assert.equal(cargoLocation, 'USA');
+});
+    buyer = 'Adam'
 
-        assert.equal(cargoPrice, 600)
-        assert.equal(cargoDetails, 'Graphics Card')
-        assert.equal(cargoLocation, 'USA')
+    SupplyChain.cargoBought.call(0, buyer);
+
+    it("Testing whether buyer name is there when cargo has been bought", async()=>{
+        
+        assert.equal(buyer, 'Adam');
     });
-
 });
