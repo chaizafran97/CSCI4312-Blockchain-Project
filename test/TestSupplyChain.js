@@ -1,23 +1,24 @@
 const SupplyChain = artifacts.require("SupplyChain");
 
-contract("SupplyChain", initializeCargo =>{
+contract('SupplyChain', () =>{
     
     cargoPrice = 600;
     cargoDetails = 'Graphics Card';
     cargoLocation = 'USA';
     buyer = '';
 
-    it("Testing whether cargo has been initialized", async()=>{
-        assert.equal(cargoPrice, 600);
-        assert.equal(cargoDetails, 'Graphics Card');
-        assert.equal(cargoLocation, 'USA');
+    it('Testing whether cargo has been initialized', async()=>{
+        const supplyChain = await SupplyChain.deployed();
+        await supplyChain.initializeCargo(cargoPrice, cargoDetails, cargoLocation, buyer);
+        assert(cargoPrice === 600);
+        assert(cargoDetails === 'Graphics Card');
+        assert(cargoLocation === 'USA');
 });
     buyer = 'Adam'
 
-    SupplyChain.cargoBought.call(0, buyer);
-
-    it("Testing whether buyer name is there when cargo has been bought", async()=>{
-        
-        assert.equal(buyer, 'Adam');
+    it('Buyer should be named Adam', async () => {
+        const supplyChain = await SupplyChain.deployed();
+        await supplyChain.cargoBought(0, buyer);
+        assert(buyer === 'Adam');
     });
 });
