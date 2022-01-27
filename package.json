@@ -1,8 +1,33 @@
-{"scripts":{
-    "test":"mocha"},
-"dependencies":{
-    "chai":"^4.3.4"},
-"devDependencies":{
-    "chai":"*",
-    "mocha":"*"
-}}
+{
+  "scripts": {
+    "test": "mocha",
+    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider; ng build"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.1",
+    "chai": "^4.3.4",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "name": "csci4312-blockchain-project",
+  "description": "This project was developed for me and my partner for our Blockchain and Application course in IIUM.\r   The goal of this project was to develop a simple blockchain for a supply chain system.\r   Blockchain seems like a good replacement to the current system for supply chains.",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaizafran97/CSCI4312-Blockchain-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaizafran97/CSCI4312-Blockchain-Project/issues"
+  },
+  "homepage": "https://github.com/chaizafran97/CSCI4312-Blockchain-Project#readme"
+}
