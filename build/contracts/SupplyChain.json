@@ -74,8 +74,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -215,8 +214,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"AllowedThroughCustoms\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"DeniedAtCustoms\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"Cargo\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"cargoID\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"cargoPrice\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"cargoDetails\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"cargoLocation\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"buyer\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"cargoState\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_temp\",\"type\":\"string\"}],\"name\":\"cargoBought\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"cargoReceieved\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"cargoShipping\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_temp\",\"type\":\"string\"}],\"name\":\"customsCheck\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"cargoPrice\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"cargoDetails\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"cargoLocation\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"buyer\",\"type\":\"string\"}],\"name\":\"initializeCargo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_temp\",\"type\":\"uint256\"}],\"name\":\"viewCargo\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/SupplyChain.sol\":\"SupplyChain\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/SupplyChain.sol\":{\"keccak256\":\"0x442ef369c4a666f74d6992b6a93fc436d8a1a00e2e79297774c31ba168538adc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://72205a1435e87028a47fb499081f82c7f53a8527b6ef8d10a6951bb55befa81f\",\"dweb:/ipfs/QmWnTaeheuuL42pkCcEFkGivVw7g8RodyKbvdFWit3c5jj\"]}},\"version\":1}",
@@ -11140,8 +11138,7 @@
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-27T10:25:53.901Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-01-28T05:14:26.663Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
